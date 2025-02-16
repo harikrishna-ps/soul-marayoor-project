@@ -1,0 +1,43 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Experience the natural beauty and comfort of our eco-friendly mud house resort" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <title>{title}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body class="font-['Inter']">
+    <nav class="bg-earth-dark text-white py-4">
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <a href="/" class="font-['Playfair_Display'] text-2xl">Mud House Resort</a>
+        <div class="space-x-6">
+          <a href="#about" class="hover:text-earth-light transition-colors">About</a>
+          <a href="#accommodations" class="hover:text-earth-light transition-colors">Accommodations</a>
+          <a href="#contact" class="hover:text-earth-light transition-colors">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <slot />
+    <footer class="bg-earth-dark text-white py-8 mt-16">
+      <div class="container mx-auto px-4 text-center">
+        <p>&copy; {new Date().getFullYear()} Mud House Resort. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
